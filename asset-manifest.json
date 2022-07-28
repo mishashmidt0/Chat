@@ -1,20 +1,22 @@
 {
   "files": {
-    "main.css": "/Chat/static/css/main.3d81ff3a.css",
-    "main.js": "/Chat/static/js/main.42eb7e1b.js",
+    "main.css": "/Chat/static/css/main.fb5f53d2.css",
+    "main.js": "/Chat/static/js/main.2ff0b2b0.js",
     "static/media/bg.jpg": "/Chat/static/media/bg.53587d387feaab560e16.jpg",
     "static/media/bg-min.jpg": "/Chat/static/media/bg-min.977bafaf02606e1a6eb5.jpg",
+    "static/media/admin.svg": "/Chat/static/media/admin.82445e4c5d58091eaedd06adbb52844b.svg",
+    "static/media/BTC.svg": "/Chat/static/media/BTC.14cd67e51c135f9a7b060252f3f942c4.svg",
     "static/media/emoji.svg": "/Chat/static/media/emoji.b4de8fe1899ea68ff07f87ba2ce384a1.svg",
     "index.html": "/Chat/index.html",
     "static/media/arrowRight.svg": "/Chat/static/media/arrowRight.3c1178e25eb93c7456e199cb9799d000.svg",
     "static/media/sizeDoMore.svg": "/Chat/static/media/sizeDoMore.1bff3ccbb876ae7f0e120e958bfaf1de.svg",
     "static/media/collapse.svg": "/Chat/static/media/collapse.c03edfeba86315a5d8dc9a0ec60cf52a.svg",
     "static/media/arrowLanguage.svg": "/Chat/static/media/arrowLanguage.ecda8cba64bc35caf5e973641fb62805.svg",
-    "main.3d81ff3a.css.map": "/Chat/static/css/main.3d81ff3a.css.map",
-    "main.42eb7e1b.js.map": "/Chat/static/js/main.42eb7e1b.js.map"
+    "main.fb5f53d2.css.map": "/Chat/static/css/main.fb5f53d2.css.map",
+    "main.2ff0b2b0.js.map": "/Chat/static/js/main.2ff0b2b0.js.map"
   },
   "entrypoints": [
-    "static/css/main.3d81ff3a.css",
-    "static/js/main.42eb7e1b.js"
+    "static/css/main.fb5f53d2.css",
+    "static/js/main.2ff0b2b0.js"
   ]
 }
