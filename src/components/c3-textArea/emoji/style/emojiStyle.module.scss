@@ -1,0 +1,12 @@
+.emoji__smile {
+  svg {
+    stroke:mediumpurple;
+  }
+}
+
+.emoji__picker {
+  position: absolute;
+  bottom: 10%;
+  left: 105%;
+  transition: all ease 0.4s;
+}

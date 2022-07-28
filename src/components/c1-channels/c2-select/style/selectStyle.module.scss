@@ -1,0 +1,39 @@
+.select {
+  display: inline-block;
+  cursor: pointer;
+  padding: 0 3px;
+
+  &__activeLanguage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+
+    &__img {
+      margin-left: 5px;
+      transition: 0.4s;
+    }
+
+    &__imgActive {
+      transition: 0.4s;
+      transform: rotate(180deg);
+    }
+  }
+
+  &__languages {
+
+    width: 30px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    margin: 5px 0;
+    padding: 0 3px;
+    gap: 5px;
+    background: rgba(0, 0, 0, 0.33);
+    transition: all ease 0.4s;
+  }
+
+  &__languagesUp {
+    bottom: 35px;
+  }
+}
