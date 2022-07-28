@@ -2,6 +2,12 @@
   height: 80%;
   overflow: auto;
   transition: all ease 1s;
+
+  &__container{
+    position: relative;
+    bottom:0;
+    transition: all ease 1s;
+  }
 }
 .chatLargeSize{
   height: 100%;

@@ -17,10 +17,19 @@ export const Chat = (): ReturnComponentType => {
 
   useEffect(() => {
     dispatch(getMessage());
+
+    const chat = document.getElementById('chat');
+
+    if (chat) {
+      chat.scrollTop = chat.scrollHeight;
+    }
   }, []);
 
   return (
-    <div className={`${style.chat} text ${isBigSize ? style.chatLargeSize : ''}`}>
+    <div
+      className={`${style.chat} text ${isBigSize ? style.chatLargeSize : ''}`}
+      id="chat"
+    >
       {reverseMessage.map(el =>
         el.from === 'Me' ? (
           <MyMessage key={el.id} {...el} />
