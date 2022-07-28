@@ -2,8 +2,8 @@ import React from 'react';
 
 import arrowLanguage from '../../../assets/arrowLanguage.svg';
 import { useAppDispatch, useAppSelector } from '../../../redux/store';
-import { ReturnComponentType } from '../../../types';
-import { languageType } from '../../../types/SelectType';
+import { ReturnComponentType } from '../../../types/componentType';
+import { languageType } from '../../../types/SelectType/SelectType';
 import { changeLanguage, changeSelect } from '../c4-slice/Channels-slice';
 
 import style from './style/selectStyle.module.scss';

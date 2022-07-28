@@ -3,8 +3,8 @@ import { v4 as uuidv4 } from 'uuid';
 
 import { ChannelsEnum, SelectLanguage } from '../../../enums/enum-channels';
 import { SliceName } from '../../../enums/enum-slice';
-import { channelsArrType } from '../../../types/ChannelsType';
-import { languageType, selectType } from '../../../types/SelectType';
+import { channelsArrType } from '../../../types/ChannelsType/ChannelsType';
+import { languageType, selectType } from '../../../types/SelectType/SelectType';
 
 // state
 const initialState: channelsType = {

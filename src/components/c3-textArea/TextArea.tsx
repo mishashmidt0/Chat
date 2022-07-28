@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { ReturnComponentType } from '../../types';
+import { ReturnComponentType } from '../../types/componentType';
 
 import { Emoji } from './emoji/Emoji';
 import style from './style/TextAreaStyle.module.scss';

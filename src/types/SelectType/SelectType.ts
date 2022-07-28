@@ -1,4 +1,4 @@
-import { SelectLanguage } from '../enums/enum-channels';
+import { SelectLanguage } from '../../enums/enum-channels';
 
 export type languageType =
   | SelectLanguage.Russian

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Picker, { IEmojiData } from 'emoji-picker-react';
 
 import emoji from '../../../assets/emoji.svg';
-import { ReturnComponentType } from '../../../types';
+import { ReturnComponentType } from '../../../types/componentType';
 
 import style from './style/emojiStyle.module.scss';
 

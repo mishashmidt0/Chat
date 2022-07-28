@@ -6,7 +6,7 @@ import { Channels } from '../components/c1-channels/Channels';
 import { Chat } from '../components/c2-chat/Chat';
 import { TextArea } from '../components/c3-textArea/TextArea';
 import { useAppSelector } from '../redux/store';
-import { ReturnComponentType } from '../types';
+import { ReturnComponentType } from '../types/componentType';
 
 import style from './style/appStyle.module.scss';
 

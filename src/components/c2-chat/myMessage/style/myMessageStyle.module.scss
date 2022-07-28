@@ -1,0 +1,20 @@
+.meMessage{
+  display: flex;
+  align-items: center;
+  justify-content: end;
+
+  &__container{
+    margin: 5px 10px;
+    padding: 11px 12px;
+    background: #212121;
+    border-radius: 20px 20px 0px 20px;
+  }
+  &__data{
+    color: #FFFFFF;
+    opacity: 0.4;
+
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
+  }
+}
