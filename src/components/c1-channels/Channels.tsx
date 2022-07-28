@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ReturnComponentType } from '../../types';
+import { ReturnComponentType } from '../../types/componentType';
 
 import { Channel } from './c1-chanel/Channel';
 import { Select } from './c2-select/Select';

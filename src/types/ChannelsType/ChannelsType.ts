@@ -1,4 +1,4 @@
-import { ChannelsEnum } from '../enums/enum-channels';
+import { ChannelsEnum } from '../../enums/enum-channels';
 
 export type channelsNameType =
   | ChannelsEnum.Friends

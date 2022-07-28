@@ -2,7 +2,7 @@ import React, { useMemo, useState } from 'react';
 
 import arrow from '../../../assets/arrowRight.svg';
 import { useAppDispatch, useAppSelector } from '../../../redux/store';
-import { ReturnComponentType } from '../../../types';
+import { ReturnComponentType } from '../../../types/componentType';
 import { changeActiveChannel } from '../c4-slice/Channels-slice';
 
 import style from './style/channelStyle.module.scss';

@@ -1,0 +1,17 @@
+.chat {
+  height: 80%;
+  overflow: auto;
+  transition: all ease 1s;
+}
+.chatLargeSize{
+  height: 100%;
+}
+.chat::-webkit-scrollbar {
+  width: 7px;
+}
+.chat::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.25);
+}
+.chat::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+}

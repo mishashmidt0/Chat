@@ -3,7 +3,7 @@ import React from 'react';
 import collapse from '../../../assets/collapse.svg';
 import sizeDoMore from '../../../assets/sizeDoMore.svg';
 import { useAppDispatch, useAppSelector } from '../../../redux/store';
-import { ReturnComponentType } from '../../../types';
+import { ReturnComponentType } from '../../../types/componentType';
 import { changeCollapse, changeIsBigSize } from '../c4-slice/Channels-slice';
 
 import style from './style/buttonsStyle.module.scss';
