@@ -33,7 +33,7 @@ export const Channel = (): ReturnComponentType => {
   );
 
   return (
-    <>
+    <div className={style.channels}>
       <div className={style.channels__container}>
         <div
           className={style.channels__container__arr}
@@ -57,6 +57,6 @@ export const Channel = (): ReturnComponentType => {
           alt="arrow"
         />
       </span>
-    </>
+    </div>
   );
 };

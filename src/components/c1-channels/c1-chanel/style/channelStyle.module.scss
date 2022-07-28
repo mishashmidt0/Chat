@@ -1,20 +1,25 @@
+.channels {
+  display: flex;
+  width: 70%;
+}
+
 .channels__container {
   display: flex;
   gap: 5px;
   overflow: hidden;
+  margin-left: 10px;
 
   &__arr {
     position: relative;
     right: 0;
     display: flex;
     gap: 10px;
-    width: 200px;
     transition: all ease 1s;
   }
 
   &__arrow {
     cursor: pointer;
-
+    margin-left: 5px;
 
     &__img {
       transition: 0.4s;

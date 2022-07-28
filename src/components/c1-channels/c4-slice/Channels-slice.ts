@@ -42,7 +42,7 @@ const ChannelsSlice = createSlice({
       return { ...state, isSelect: payload };
     },
     changeIsBigSize(state, { payload }) {
-      return { ...state, isBigSize: payload };
+      return { ...state, isBigSize: payload, isSelect: false };
     },
     changeActiveChannel(state, { payload: { id } }) {
       return {

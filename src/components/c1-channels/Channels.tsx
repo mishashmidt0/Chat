@@ -9,7 +9,7 @@ import style from './c5-style/channelsStyle.module.scss';
 
 export const Channels = (): ReturnComponentType => {
   return (
-    <div className={style.channels}>
+    <div className={`${style.channels} text`}>
       <Channel />
       <Select />
       <Buttons />
