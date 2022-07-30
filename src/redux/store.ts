@@ -13,6 +13,7 @@ import ChatSlice, {
   changeLoading,
   changeSkipLimit,
   setMessage,
+  setMyName,
 } from '../components/c2-chat/slice/chat-slice';
 import MessageSlice, {
   changeMessage,
@@ -41,6 +42,7 @@ export type AllActionType =
   | ReturnType<typeof changeSkipLimit>
   | ReturnType<typeof changeLoading>
   | ReturnType<typeof changeScroll>
+  | ReturnType<typeof setMyName>
   | ReturnType<typeof changeActiveChannel>;
 
 export type TypedDispatch = ThunkDispatch<storeType, any, AllActionType>;

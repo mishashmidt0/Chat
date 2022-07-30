@@ -7,6 +7,7 @@ import { Chat } from '../components/c2-chat/Chat';
 import { addMyMessage } from '../components/c2-chat/slice/chat-slice';
 import { changeScroll } from '../components/c3-superInput/slice/message-slice';
 import { SuperInput } from '../components/c3-superInput/SuperInput';
+import { MyName } from '../components/c4-myName/MyName';
 import { SelectLanguage } from '../enums/enum-channels';
 import { useAppDispatch, useAppSelector } from '../redux/store';
 import { socket } from '../socket/Socket';
@@ -16,6 +17,7 @@ import style from './style/appStyle.module.scss';
 
 export const App = (): ReturnComponentType => {
   const dispatch = useAppDispatch();
+  const myName = useAppSelector(state => state.chat.myName);
   const isCollapse = useAppSelector(state => state.channels.isCollapse);
   const isBigSize = useAppSelector(state => state.channels.isBigSize);
   const activeLanguage = useAppSelector(state => state.channels.activeLanguage);
@@ -50,6 +52,7 @@ export const App = (): ReturnComponentType => {
           </>
         )}
       </div>
+      {!myName && <MyName />}
     </div>
   );
 };

@@ -44,13 +44,16 @@ const ChatSlice = createSlice({
     changeLoading(state, { payload }) {
       return { ...state, isLoading: payload };
     },
+    setMyName(state, { payload }) {
+      return { ...state, myName: payload };
+    },
   },
 });
 
 export default ChatSlice.reducer;
 
 // action
-export const { setMessage, addMyMessage, changeSkipLimit, changeLoading } =
+export const { setMessage, addMyMessage, changeSkipLimit, changeLoading, setMyName } =
   ChatSlice.actions;
 
 // thunks
@@ -74,4 +77,5 @@ export type chatType = {
   skip: number;
   limit: number;
   isLoading: boolean;
+  myName: string | null;
 };

@@ -23,7 +23,7 @@ export const SuperInput = (): ReturnComponentType => {
   const sendMessage = useCallback((event: React.KeyboardEvent, message: string): void => {
     if (event.code === EnumChat.enter && message.trim()) {
       const msg = {
-        from: 'MikhsilSmidt',
+        from: localStorage.name,
         text: message,
       };
 

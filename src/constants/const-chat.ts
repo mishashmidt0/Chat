@@ -30,6 +30,7 @@ export const initialState: chatType = {
   skip,
   limit,
   isLoading: false,
+  myName: localStorage.getItem('name'),
   messages: {
     [GeneralId]: [
       {
