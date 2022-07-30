@@ -22,7 +22,7 @@ export const Buttons = (): ReturnComponentType => {
     } else {
       dispatch(changeCollapse(!isCollapse));
     }
-    setInterval(() => {
+    setTimeout(() => {
       dispatch(changeScroll(true));
     }, time);
   };
@@ -34,7 +34,7 @@ export const Buttons = (): ReturnComponentType => {
     } else {
       dispatch(changeIsBigSize(!isBigSize));
     }
-    setInterval(() => {
+    setTimeout(() => {
       dispatch(changeScroll(true));
     }, time);
   };
