@@ -9,6 +9,7 @@ export const useSocket = (): Socket => {
     transports: ['websocket'],
     upgrade: false,
   });
+  socketRef.current.connect();
 
   return socketRef.current;
 };

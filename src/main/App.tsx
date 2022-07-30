@@ -5,6 +5,7 @@ import bgMax from '../assets/bg.jpg';
 import { Channels } from '../components/c1-channels/Channels';
 import { Chat } from '../components/c2-chat/Chat';
 import { TextArea } from '../components/c3-textArea/TextArea';
+import { SelectLanguage } from '../enums/enum-channels';
 import { useAppSelector } from '../redux/store';
 import { ReturnComponentType } from '../types/componentType';
 
@@ -13,6 +14,7 @@ import style from './style/appStyle.module.scss';
 export const App = (): ReturnComponentType => {
   const isCollapse = useAppSelector(state => state.channels.isCollapse);
   const isBigSize = useAppSelector(state => state.channels.isBigSize);
+  const activeLanguage = useAppSelector(state => state.channels.activeLanguage);
   const [bg, setBg] = useState(BgMini);
 
   useEffect(() => {
@@ -34,7 +36,8 @@ export const App = (): ReturnComponentType => {
         <Channels />
         {!isCollapse && (
           <>
-            <Chat /> <TextArea />
+            {activeLanguage === SelectLanguage.Russian && <Chat />}
+            <TextArea />
           </>
         )}
       </div>

@@ -13,7 +13,6 @@ const timeout = 350;
 export const Chat = (): ReturnComponentType => {
   const channelsArr = useAppSelector(state => state.channels.channelState);
   const activeChannel = channelsArr.find(el => el.isActive);
-
   const messages = useAppSelector(state => state.chat.messages[`${activeChannel!.id}`]);
 
   const limit = useAppSelector(state => state.chat.limit);

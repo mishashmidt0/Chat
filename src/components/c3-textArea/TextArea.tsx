@@ -20,7 +20,7 @@ export const TextArea = (): ReturnComponentType => {
   const message = useAppSelector(state => state.message.message);
   const isScroll = useAppSelector(state => state.message.scroll);
   const channelsArr = useAppSelector(state => state.channels.channelState);
-
+  const activeLanguage = useAppSelector(state => state.channels.activeLanguage);
   const changeText = (event: React.ChangeEvent<HTMLInputElement>): void => {
     dispatch(changeMessage(event.target.value));
   };
@@ -34,9 +34,17 @@ export const TextArea = (): ReturnComponentType => {
         createdAt: new Date().toString(),
       };
 
-      messageSocket.emit('message', {
-        from: 'Me',
+      const msg = {
+        from: 'MikhsilSmidt',
         text: message,
+      };
+
+      messageSocket.emit('message', msg, (err: any) => {
+        if (err) {
+          console.error(err);
+        } else {
+          console.log('success');
+        }
       });
 
       dispatch(addMyMessage(payload));
@@ -45,11 +53,6 @@ export const TextArea = (): ReturnComponentType => {
     }
   }, []);
 
-  messageSocket.on('message', event => {
-    dispatch(addMyMessage(event));
-    dispatch(changeScroll(true));
-  });
-
   useEffect(() => {
     const chat = document.getElementById('chat');
 
@@ -57,7 +60,14 @@ export const TextArea = (): ReturnComponentType => {
       chat.scrollTop = chat.scrollHeight;
       dispatch(changeScroll(false));
     }
-  }, [isScroll, channelsArr]);
+  }, [isScroll, channelsArr, activeLanguage]);
+
+  useEffect(() => {
+    messageSocket.on('message', event => {
+      dispatch(addMyMessage(event));
+      dispatch(changeScroll(true));
+    });
+  }, []);
 
   return (
     <div className={style.TextArea}>

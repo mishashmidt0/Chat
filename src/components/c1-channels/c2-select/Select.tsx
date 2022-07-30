@@ -4,6 +4,7 @@ import arrowLanguage from '../../../assets/arrowLanguage.svg';
 import { useAppDispatch, useAppSelector } from '../../../redux/store';
 import { ReturnComponentType } from '../../../types/componentType';
 import { languageType } from '../../../types/SelectType/SelectType';
+import { changeScroll } from '../../c3-textArea/slice/message-slice';
 import { changeLanguage, changeSelect } from '../c4-slice/Channels-slice';
 
 import style from './style/selectStyle.module.scss';
@@ -18,6 +19,7 @@ export const Select = (): ReturnComponentType => {
   const chooseLanguage = (value: languageType): void => {
     dispatch(changeLanguage(value));
     dispatch(changeSelect(false));
+    dispatch(changeScroll(true));
   };
 
   return (
