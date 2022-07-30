@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import Picker, { IEmojiData } from 'emoji-picker-react';
 
@@ -21,14 +21,6 @@ export const Emoji = (): ReturnComponentType => {
   const chooseEmoji = (): void => {
     setIsActive(!isActive);
   };
-
-  useEffect(() => {
-    const messageInput = document.getElementById('inputMessage');
-
-    if (messageInput) {
-      messageInput.focus();
-    }
-  }, [message]);
 
   return (
     <>

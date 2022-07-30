@@ -17,7 +17,7 @@ import ChatSlice, {
 import MessageSlice, {
   changeMessage,
   changeScroll,
-} from '../components/c3-textArea/slice/message-slice';
+} from '../components/c3-superInput/slice/message-slice';
 
 const reducer = combineReducers({
   channels: ChannelsSlice,

@@ -11,6 +11,7 @@ import {
   NewsId,
 } from './const-channels';
 
+export const timeout = 350;
 const data = new Date().toString();
 
 export const limit = 10;

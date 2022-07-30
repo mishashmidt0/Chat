@@ -4,13 +4,14 @@ import { v4 as uuidv4 } from 'uuid';
 import { MessagesApi } from '../../../api/messagesApi';
 import { GeneralId } from '../../../constants/const-channels';
 import { initialState, limit } from '../../../constants/const-chat';
+import { EnumChat } from '../../../enums/enum-chat';
 import { TypedDispatch } from '../../../redux/store';
 import { finalMessage, message, messageKey } from '../../../types/ChatType/ChatType';
 import { getRandom } from '../util/random';
 
 // toolkit
 const ChatSlice = createSlice({
-  name: 'ChatSlice',
+  name: EnumChat.name,
   initialState,
   reducers: {
     setMessage(state, { payload }) {
