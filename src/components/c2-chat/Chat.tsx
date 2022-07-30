@@ -5,15 +5,20 @@ import { ReturnComponentType } from '../../types/componentType';
 
 import { MessageOther } from './messageOther/MessageOther';
 import { MyMessage } from './myMessage/MyMessage';
-import { getMessage } from './slice/chat-slice';
+import { changeLoading, getMessage } from './slice/chat-slice';
 import style from './style/chatStyle.module.scss';
 
-const timeout = 300;
+const timeout = 350;
 
 export const Chat = (): ReturnComponentType => {
-  const messages = useAppSelector(state => state.chat.message);
+  const channelsArr = useAppSelector(state => state.channels.channelState);
+  const activeChannel = channelsArr.find(el => el.isActive);
+
+  const messages = useAppSelector(state => state.chat.messages[`${activeChannel!.id}`]);
+
   const limit = useAppSelector(state => state.chat.limit);
   const skip = useAppSelector(state => state.chat.skip);
+  const isLoading = useAppSelector(state => state.chat.isLoading);
   const isBigSize = useAppSelector(state => state.channels.isBigSize);
 
   const reverseMessage = [...messages].reverse();
@@ -25,6 +30,7 @@ export const Chat = (): ReturnComponentType => {
     const chat = document.getElementById('chat');
 
     if (chat) {
+      chat.scrollTop = chat.scrollHeight;
       chat.addEventListener('scroll', throttle(checkPosition, timeout));
     }
 
@@ -40,17 +46,21 @@ export const Chat = (): ReturnComponentType => {
     const container = document.getElementById('chat_container')!;
     const chat = event.target as HTMLElement;
     const screenHeight = container.scrollHeight;
+    const height = chat.offsetHeight;
     const scrolled = chat.scrollTop;
     const lineDispatch = 700;
 
-    if (scrolled < lineDispatch && screenHeight > lineDispatch) {
-      chat.scrollTop = 800;
+    if (scrolled < height) {
+      chat.scrollTop = 200;
+    }
+    if (scrolled < lineDispatch && screenHeight > lineDispatch && !isLoading) {
+      dispatch(changeLoading(true));
       dispatch(getMessage(skip, limit));
     }
   };
 
   const throttle = (
-    callee: (event: Event) => Promise<any>,
+    func: (event: Event) => Promise<any>,
     timeout: number,
   ): ((...args: any[]) => void) => {
     let timer: any = null;
@@ -59,7 +69,7 @@ export const Chat = (): ReturnComponentType => {
       if (timer) return;
 
       timer = setTimeout(() => {
-        callee(event);
+        func(event);
 
         clearTimeout(timer);
         timer = null;

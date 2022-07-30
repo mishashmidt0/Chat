@@ -1,6 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { v4 as uuidv4 } from 'uuid';
 
+import {
+  VikingsId,
+  ClanId,
+  FriendsId,
+  GeneralId,
+  HuntersId,
+  NewsId,
+} from '../../../constants/const-channels';
 import { ChannelsEnum, SelectLanguage } from '../../../enums/enum-channels';
 import { SliceName } from '../../../enums/enum-slice';
 import { channelsArrType } from '../../../types/ChannelsType/ChannelsType';
@@ -15,12 +23,12 @@ const initialState: channelsType = {
   ],
   activeLanguage: SelectLanguage.Russian,
   channelState: [
-    { id: uuidv4(), name: ChannelsEnum.General, isActive: true },
-    { id: uuidv4(), name: ChannelsEnum.Friends, isActive: false },
-    { id: uuidv4(), name: ChannelsEnum.Clan, isActive: false },
-    { id: uuidv4(), name: ChannelsEnum.News, isActive: false },
-    { id: uuidv4(), name: ChannelsEnum.Vikings, isActive: false },
-    { id: uuidv4(), name: ChannelsEnum.Hunters, isActive: false },
+    { id: GeneralId, name: ChannelsEnum.General, isActive: true },
+    { id: FriendsId, name: ChannelsEnum.Friends, isActive: false },
+    { id: ClanId, name: ChannelsEnum.Clan, isActive: false },
+    { id: NewsId, name: ChannelsEnum.News, isActive: false },
+    { id: VikingsId, name: ChannelsEnum.Vikings, isActive: false },
+    { id: HuntersId, name: ChannelsEnum.Hunters, isActive: false },
   ],
   isCollapse: false,
   isSelect: false,
