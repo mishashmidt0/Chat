@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { v4 as uuidv4 } from 'uuid';
 
 import { MessagesApi } from '../../../api/messagesApi';
 import { initialState, limit } from '../../../constants/ChatInitData';
@@ -15,7 +16,7 @@ const ChatSlice = createSlice({
         ...state,
         message: [
           ...state.message,
-          ...payload.map((el: message) => ({ ...el, lvl: 10 })),
+          ...payload.map((el: message) => ({ ...el, lvl: 10, id: uuidv4() })),
         ],
       };
     },

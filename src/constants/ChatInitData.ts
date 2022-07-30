@@ -4,9 +4,9 @@ import { chatType } from '../components/c2-chat/slice/chat-slice';
 
 const data = new Date().toString();
 
-export const limit = 8;
+export const limit = 10;
 export const skip = 0;
-export const scrollMax = 200;
+export const scrollMax = 250;
 
 export const MyAccount = {
   id: uuidv4(),
