@@ -1,24 +1,34 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Picker, { IEmojiData } from 'emoji-picker-react';
 
 import emoji from '../../../assets/emoji.svg';
+import { useAppDispatch, useAppSelector } from '../../../redux/store';
 import { ReturnComponentType } from '../../../types/componentType';
+import { changeMessage } from '../slice/message-slice';
 
 import style from './style/emojiStyle.module.scss';
 
 export const Emoji = (): ReturnComponentType => {
-  const [chosenEmoji, setChosenEmoji] = useState<IEmojiData | null>(null);
-  const [isActive, setIsACtive] = useState(false);
+  const dispatch = useAppDispatch();
+  const message = useAppSelector(state => state.message.message);
+  const [isActive, setIsActive] = useState(false);
 
   const onEmojiClick = (event: React.MouseEvent, emojiObject: IEmojiData): void => {
-    setChosenEmoji(emojiObject);
-    console.log(chosenEmoji);
+    dispatch(changeMessage(`${message}${emojiObject?.emoji}`));
   };
 
   const chooseEmoji = (): void => {
-    setIsACtive(!isActive);
+    setIsActive(!isActive);
   };
+
+  useEffect(() => {
+    const messageInput = document.getElementById('inputMessage');
+
+    if (messageInput) {
+      messageInput.focus();
+    }
+  }, [message]);
 
   return (
     <>
