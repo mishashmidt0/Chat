@@ -17,9 +17,11 @@
     transition: all ease 1s;
   }
 
+
   &__arrow {
     cursor: pointer;
     margin-left: 5px;
+    position: relative;
 
     &__img {
       transition: 0.4s;

@@ -4,10 +4,19 @@
   justify-content: end;
 
   &__container{
+    max-width: 60%;
     margin: 5px 10px;
     padding: 11px 12px;
     background: #212121;
     border-radius: 20px 20px 0px 20px;
+
+    &__text{
+      display: inline-block;
+      margin: 0;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+
+    }
   }
   &__data{
     color: #FFFFFF;

@@ -1,4 +1,4 @@
-const min = 0;
+const min = 1;
 const max = 10;
 
 export const getRandom = (): number => {

@@ -23,7 +23,7 @@ export const MessageOther = ({
           <img src={adminIco} alt="adminIco" />
           <span>{lvl}</span>
         </div>
-        <div className={style.messageOther__text}>{text}</div>
+        <p className={style.messageOther__text}>{text}</p>
       </div>
       <div className={style.messageOther__data}>{parseDate(createdAt)}</div>
     </div>

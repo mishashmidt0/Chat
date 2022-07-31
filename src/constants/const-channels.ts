@@ -6,3 +6,5 @@ export const FriendsId = uuidv4();
 export const NewsId = uuidv4();
 export const VikingsId = uuidv4();
 export const HuntersId = uuidv4();
+
+export const timeDelaySize = 600;
