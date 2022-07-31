@@ -1,0 +1,14 @@
+.myName{
+  position: absolute;
+  background: rgba(0, 0, 0, 0.57);
+  width: 100%;
+  height: 100%;
+  &__container{
+    position: absolute;
+    top: 30%;
+    left: 45%;
+    p{
+     font-size: 20px;
+    }
+  }
+}

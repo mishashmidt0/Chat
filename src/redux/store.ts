@@ -10,12 +10,15 @@ import ChannelsSlice, {
   changeSelect,
 } from '../components/c1-channels/c4-slice/Channels-slice';
 import ChatSlice, {
+  changeLoading,
   changeSkipLimit,
   setMessage,
+  setMyName,
 } from '../components/c2-chat/slice/chat-slice';
 import MessageSlice, {
   changeMessage,
-} from '../components/c3-textArea/slice/message-slice';
+  changeScroll,
+} from '../components/c3-superInput/slice/message-slice';
 
 const reducer = combineReducers({
   channels: ChannelsSlice,
@@ -37,6 +40,9 @@ export type AllActionType =
   | ReturnType<typeof setMessage>
   | ReturnType<typeof changeMessage>
   | ReturnType<typeof changeSkipLimit>
+  | ReturnType<typeof changeLoading>
+  | ReturnType<typeof changeScroll>
+  | ReturnType<typeof setMyName>
   | ReturnType<typeof changeActiveChannel>;
 
 export type TypedDispatch = ThunkDispatch<storeType, any, AllActionType>;

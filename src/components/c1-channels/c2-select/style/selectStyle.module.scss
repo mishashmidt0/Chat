@@ -30,6 +30,7 @@
     gap: 5px;
     background: rgba(0, 0, 0, 0.33);
     transition: all ease 0.4s;
+    z-index: 10;
   }
 
   &__languagesUp {

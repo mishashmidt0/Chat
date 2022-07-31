@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { domain } from '../constants/api';
+import { domain } from '../constants/const-api';
 
 export const instance = axios.create({
   baseURL: domain,

@@ -4,9 +4,12 @@ import collapse from '../../../assets/collapse.svg';
 import sizeDoMore from '../../../assets/sizeDoMore.svg';
 import { useAppDispatch, useAppSelector } from '../../../redux/store';
 import { ReturnComponentType } from '../../../types/componentType';
+import { changeScroll } from '../../c3-superInput/slice/message-slice';
 import { changeCollapse, changeIsBigSize } from '../c4-slice/Channels-slice';
 
 import style from './style/buttonsStyle.module.scss';
+
+const time = 600;
 
 export const Buttons = (): ReturnComponentType => {
   const dispatch = useAppDispatch();
@@ -19,6 +22,9 @@ export const Buttons = (): ReturnComponentType => {
     } else {
       dispatch(changeCollapse(!isCollapse));
     }
+    setTimeout(() => {
+      dispatch(changeScroll(true));
+    }, time);
   };
 
   const makeBigSize = (): void => {
@@ -28,6 +34,9 @@ export const Buttons = (): ReturnComponentType => {
     } else {
       dispatch(changeIsBigSize(!isBigSize));
     }
+    setTimeout(() => {
+      dispatch(changeScroll(true));
+    }, time);
   };
 
   return (
