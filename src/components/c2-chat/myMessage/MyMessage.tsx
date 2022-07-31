@@ -11,7 +11,7 @@ export const MyMessage = ({ text, createdAt }: finalMessage): ReturnComponentTyp
     <div className={style.meMessage}>
       <div className={style.meMessage__data}>{parseDate(createdAt)}</div>
       <div className={style.meMessage__container}>
-        <div>{text}</div>
+        <p className={style.meMessage__container__text}>{text}</p>
       </div>
     </div>
   );

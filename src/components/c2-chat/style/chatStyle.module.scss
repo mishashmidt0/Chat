@@ -1,6 +1,7 @@
 .chat {
   height: 80%;
-  overflow: auto;
+  overflow: hidden;
+  overflow-y: auto;
   transition: all ease 1s;
   scroll-behavior: smooth;
 
