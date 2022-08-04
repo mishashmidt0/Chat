@@ -16,6 +16,7 @@ export const SuperInput = (): ReturnComponentType => {
   const [error, setError] = useState<string>('');
   const dispatch = useAppDispatch();
   const message = useAppSelector(state => state.message.message);
+  const isCollapse = useAppSelector(state => state.channels.isCollapse);
   const inputRef = useRef<HTMLInputElement | null>(null);
 
   const changeText = (event: React.ChangeEvent<HTMLInputElement>): void => {
@@ -48,7 +49,7 @@ export const SuperInput = (): ReturnComponentType => {
   }, [message]);
 
   return (
-    <div className={style.SuperInput}>
+    <div className={`${style.SuperInput}  ${isCollapse ? style.SuperInputHidden : ''}`}>
       <input
         ref={inputRef}
         className={`${style.SuperInput__input} text`}

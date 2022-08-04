@@ -36,8 +36,9 @@
 
 .channel {
   cursor: pointer;
-
+  color: #23b838;
   &__active {
+    color: white;
     border-bottom: 2px solid #23b838;
   }
 }

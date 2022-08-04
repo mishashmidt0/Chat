@@ -8,7 +8,6 @@ import { addMyMessage } from '../components/c2-chat/slice/chat-slice';
 import { changeScroll } from '../components/c3-superInput/slice/message-slice';
 import { SuperInput } from '../components/c3-superInput/SuperInput';
 import { MyName } from '../components/c4-myName/MyName';
-import { SelectLanguage } from '../enums/enum-channels';
 import { useAppDispatch, useAppSelector } from '../redux/store';
 import { socket } from '../socket/Socket';
 import { ReturnComponentType } from '../types/componentType';
@@ -20,7 +19,6 @@ export const App = (): ReturnComponentType => {
   const myName = useAppSelector(state => state.chat.myName);
   const isCollapse = useAppSelector(state => state.channels.isCollapse);
   const isBigSize = useAppSelector(state => state.channels.isBigSize);
-  const activeLanguage = useAppSelector(state => state.channels.activeLanguage);
   const [bg, setBg] = useState(BgMini);
 
   useEffect(() => {
@@ -45,12 +43,8 @@ export const App = (): ReturnComponentType => {
         }`}
       >
         <Channels />
-        {!isCollapse && (
-          <>
-            {activeLanguage === SelectLanguage.Russian && <Chat />}
-            <SuperInput />
-          </>
-        )}
+        <Chat />
+        <SuperInput />
       </div>
       {!myName && <MyName />}
     </div>

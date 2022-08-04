@@ -10,6 +10,7 @@ import ChannelsSlice, {
   changeSelect,
 } from '../components/c1-channels/c4-slice/Channels-slice';
 import ChatSlice, {
+  addMessages,
   changeLoading,
   changeSkipLimit,
   setMessage,
@@ -43,6 +44,7 @@ export type AllActionType =
   | ReturnType<typeof changeLoading>
   | ReturnType<typeof changeScroll>
   | ReturnType<typeof setMyName>
+  | ReturnType<typeof addMessages>
   | ReturnType<typeof changeActiveChannel>;
 
 export type TypedDispatch = ThunkDispatch<storeType, any, AllActionType>;

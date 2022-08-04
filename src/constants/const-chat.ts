@@ -11,16 +11,16 @@ import {
   NewsId,
 } from './const-channels';
 
-export const timeout = 350;
+export const timeout = 250;
 const data = new Date().toString();
 
-export const limit = 10;
+export const limit = 5;
 export const skip = 0;
-export const scrollMax = 250;
+export const quarter = 4;
 
 export const MyAccount = {
   id: uuidv4(),
-  from: 'Me',
+  from: localStorage.getItem('name')!,
   text: '',
   createdAt: '',
   lvl: 10,
