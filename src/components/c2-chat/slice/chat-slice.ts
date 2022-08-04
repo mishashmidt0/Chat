@@ -5,8 +5,9 @@ import { MessagesApi } from '../../../api/messagesApi';
 import { GeneralId } from '../../../constants/const-channels';
 import { initialState, limit } from '../../../constants/const-chat';
 import { EnumChat } from '../../../enums/enum-chat';
-import { TypedDispatch } from '../../../redux/store';
+import { storeType, TypedDispatch } from '../../../redux/store';
 import { finalMessage, message, messageKey } from '../../../types/ChatType/ChatType';
+import { changeScroll } from '../../c3-superInput/slice/message-slice';
 import { getRandom } from '../util/random';
 
 // toolkit
@@ -15,6 +16,19 @@ const ChatSlice = createSlice({
   initialState,
   reducers: {
     setMessage(state, { payload }) {
+      return {
+        ...state,
+        messages: {
+          ...state.messages,
+          [GeneralId]: [
+            ...payload.map((el: message) => ({ ...el, lvl: getRandom(), id: uuidv4() })),
+            ...state.messages[GeneralId],
+          ],
+        },
+      };
+    },
+
+    addMessages(state, { payload }) {
       return {
         ...state,
         messages: {
@@ -39,7 +53,7 @@ const ChatSlice = createSlice({
       };
     },
     changeSkipLimit(state) {
-      return { ...state, limit: state.limit + limit, skip: state.skip + limit };
+      return { ...state, limit: state.limit, skip: state.skip + limit };
     },
     changeLoading(state, { payload }) {
       return { ...state, isLoading: payload };
@@ -53,17 +67,46 @@ const ChatSlice = createSlice({
 export default ChatSlice.reducer;
 
 // action
-export const { setMessage, addMyMessage, changeSkipLimit, changeLoading, setMyName } =
-  ChatSlice.actions;
+export const {
+  setMessage,
+  addMyMessage,
+  changeSkipLimit,
+  changeLoading,
+  setMyName,
+  addMessages,
+} = ChatSlice.actions;
 
 // thunks
 export const getMessage =
-  (skip: number, limit: number) => async (dispatch: TypedDispatch) => {
+  () => async (dispatch: TypedDispatch, getState: () => storeType) => {
+    const { skip } = getState().chat;
+    const { limit } = getState().chat;
+
+    dispatch(changeLoading(true));
+    try {
+      const data = await MessagesApi.getMessages(skip, limit);
+
+      dispatch(addMessages(data.data));
+      dispatch(changeSkipLimit());
+    } catch (error: any) {
+      console.log(`error${error}`);
+    } finally {
+      dispatch(changeLoading(false));
+    }
+  };
+
+export const initMessage =
+  () => async (dispatch: TypedDispatch, getState: () => storeType) => {
+    const { skip } = getState().chat;
+    const { limit } = getState().chat;
+
+    dispatch(changeLoading(true));
     try {
       const data = await MessagesApi.getMessages(skip, limit);
 
       dispatch(setMessage(data.data));
       dispatch(changeSkipLimit());
+      dispatch(changeScroll(true));
     } catch (error: any) {
       console.log(`error${error}`);
     } finally {

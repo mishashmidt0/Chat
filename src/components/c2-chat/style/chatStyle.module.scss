@@ -2,19 +2,20 @@
   height: 80%;
   overflow: hidden;
   overflow-y: auto;
-  transition: all ease 1s;
+  transition: all ease 0.4s;
   scroll-behavior: smooth;
 
   &__container {
     position: relative;
     bottom: 0;
-    transition: all ease 1s;
+    transition: all ease 0.4s;
   }
 }
-
+.chatHidden{
+  display: none;
+}
 .chatLargeSize {
   height: 100%;
-  font-size: 17px;
 }
 
 .chat::-webkit-scrollbar {
